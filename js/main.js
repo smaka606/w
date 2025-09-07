@@ -1491,6 +1491,44 @@ class AccessibilityManager {
 }
 
 // ==========================================================================
+// DARK MODE MANAGER
+// ==========================================================================
+
+class DarkModeManager {
+    constructor() {
+        this.toggleButton = document.getElementById('dark-mode-toggle');
+        this.currentTheme = localStorage.getItem('theme');
+        this.init();
+    }
+
+    init() {
+        if (!this.toggleButton) return;
+
+        // Set initial theme
+        if (this.currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        } else if (this.currentTheme === 'light') {
+            document.body.classList.remove('dark-mode');
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // If no theme is stored, use system preference
+            document.body.classList.add('dark-mode');
+        }
+
+        // Add event listener
+        this.toggleButton.addEventListener('click', () => this.toggleTheme());
+    }
+
+    toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+        let theme = 'light';
+        if (document.body.classList.contains('dark-mode')) {
+            theme = 'dark';
+        }
+        localStorage.setItem('theme', theme);
+    }
+}
+
+// ==========================================================================
 // MAIN APPLICATION INITIALIZATION
 // ==========================================================================
 
@@ -1514,6 +1552,7 @@ class AlFahdApp {
             // Initialize core components
             this.components.preloader = new PreloaderManager();
             this.components.navigation = new NavigationManager();
+            this.components.darkMode = new DarkModeManager();
             this.components.modal = new ModalManager();
             this.components.form = new FormManager();
             this.components.scrollToTop = new ScrollToTop();
