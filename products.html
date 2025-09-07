@@ -159,79 +159,62 @@
         </div>
     </section>
 
-    <!-- ==========================================================================
-       MODERN FOOTER V3
-       ========================================================================== -->
-    <footer class="footer-v3">
-        <div class="footer-bg">
-            <div class="footer-wave"></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-shape">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
         </div>
         <div class="container">
-            <div class="footer-main">
-                <!-- Brand Section -->
-                <div class="footer-column brand-section">
-                    <img src="images/about/logo.png" alt="الفهد للمأكولات البحرية" class="footer-logo">
-                    <h4 class="footer-tagline">مورّدك الموثوق لأجود أنواع الأسماك والمأكولات البحرية في مصر</h4>
-                    <p class="footer-description">نلتزم بتقديم أفضل المنتجات البحرية الطازجة من مصادرها مباشرة إلى مائدتك، مع ضمان الجودة والخدمة الممتازة.</p>
+            <div class="footer-content">
+                <div class="footer-col about-col">
+                    <div class="footer-logo">
+                        <img src="images/about/logo.png" alt="الفهد للمأكولات البحرية">
+                        <span>الفهد للمأكولات البحرية</span>
+                    </div>
+                    <p>
+                        من أعماق البحار إلى مائدتك مباشرةً، نلتزم بتقديم أجود أنواع المأكولات البحرية الطازجة التي تلبي أعلى معايير الجودة.
+                    </p>
                 </div>
 
-                <!-- Quick Links Section -->
-                <div class="footer-column links-section">
-                    <h5 class="footer-heading">روابط سريعة</h5>
-                    <ul class="footer-list">
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="products.html">منتجاتنا</a></li>
-                        <li><a href="about.html">من نحن</a></li>
-                        <li><a href="contact.html">اتصل بنا</a></li>
+                <div class="footer-col links-col">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-angle-left"></i> الرئيسية</a></li>
+                        <li><a href="products.html"><i class="fas fa-angle-left"></i> منتجاتنا</a></li>
+                        <li><a href="about.html"><i class="fas fa-angle-left"></i> من نحن</a></li>
+                        <li><a href="contact.html"><i class="fas fa-angle-left"></i> اتصل بنا</a></li>
                     </ul>
                 </div>
 
-                <!-- Product Categories Section -->
-                <div class="footer-column links-section">
-                    <h5 class="footer-heading">فئات المنتجات</h5>
-                    <ul class="footer-list">
-                        <li><a href="products.html#shrimp">الجمبري</a></li>
-                        <li><a href="products.html#fish">الأسماك</a></li>
-                        <li><a href="products.html#crab">الكابوريا</a></li>
-                        <li><a href="products.html#squid">السبيط</a></li>
+                <div class="footer-col contact-col">
+                    <h4 class="footer-title">تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> الكورنيش، الإسكندرية</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201143343338" dir="ltr">+20 114 334 3338</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@alfahd-seafood.com">info@alfahd-seafood.com</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact Info Section -->
-                <div class="footer-column contact-section">
-                    <h5 class="footer-heading">معلومات التواصل</h5>
-                    <ul class="footer-list contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>الكورنيش، الإسكندرية، مصر</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <a href="tel:+201143343338" dir="ltr">+20 114 334 3338</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@alfahd-seafood.com">info@alfahd-seafood.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>يومياً: 8:00 صباحاً - 10:00 مساءً</span>
-                        </li>
-                    </ul>
+                <div class="footer-col newsletter-col">
+                    <h4 class="footer-title">النشرة البريدية</h4>
+                    <p>اشترك ليصلك كل جديد وعروضنا الحصرية.</p>
+                    <form id="newsletter-form" class="newsletter-form" novalidate>
+                        <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+                        <button type="submit" aria-label="اشتراك"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div class="social-media">
+                <div class="social-icons">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://wa.me/201143343338" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
-                <div class="copyright-text">
-                    <p>&copy; 2024 الفهد للمأكولات البحرية. جميع الحقوق محفوظة.</p>
-                    <p class="designer-credit">❤️ Designed for Al-Fahd Seafood</p>
-                </div>
+                <p class="copyright-text">&copy; 2024 الفهد للمأكولات البحرية. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>

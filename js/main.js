@@ -690,11 +690,11 @@ function createProductCard(product) {
     const whatsappLink = `https://wa.me/201143343338?text=${whatsappMessage}`;
 
     // Use placeholder if product image is not available
-    const imagePath = (product.image && product.image.fallback) ? product.image.fallback : `images/placeholder.txt`;
+    const imagePath = (product.image && product.image.fallback) ? product.image.fallback : 'images/about/product1.jpg';
 
     card.innerHTML = `
         <div class="product-image">
-            <img src="${imagePath}" alt="${product.name}" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.txt';">
+            <img src="${imagePath}" alt="${product.name}" loading="lazy" onerror="this.onerror=null;this.src='images/about/product1.jpg';">
             <div class="product-overlay">
                 <div class="product-actions">
                     <button class="product-action preview-btn">
@@ -986,7 +986,10 @@ class FormManager {
     
     init() {
         this.forms.forEach(form => {
-            this.setupFormValidation(form);
+            // General setup for all forms
+            if (form.id !== 'newsletter-form') {
+                this.setupFormValidation(form);
+            }
         });
         
         // Contact form specific setup
@@ -994,8 +997,43 @@ class FormManager {
         if (contactForm) {
             this.setupContactForm(contactForm);
         }
+
+        // Newsletter form specific setup
+        const newsletterForm = document.getElementById('newsletter-form');
+        if (newsletterForm) {
+            this.setupNewsletterForm(newsletterForm);
+        }
     }
     
+    setupNewsletterForm(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailField = form.querySelector('input[type="email"]');
+            if (!emailField) return;
+
+            const isValid = this.validateField(emailField);
+
+            if (isValid) {
+                // Simulate submission
+                console.log(`Newsletter subscription for: ${emailField.value}`);
+
+                // Show a success message (re-using success modal with custom text)
+                const modal = document.getElementById('successModal');
+                if (modal && window.modalManager) {
+                    const title = modal.querySelector('h3');
+                    const message = modal.querySelector('p');
+
+                    if (title) title.textContent = 'تم الاشتراك بنجاح!';
+                    if (message) message.textContent = 'شكراً لاشتراكك في نشرتنا البريدية. ستصلك آخر الأخبار والعروض.';
+
+                    window.modalManager.openModal('successModal');
+                }
+
+                form.reset(); // Clear the form
+            }
+        });
+    }
+
     setupFormValidation(form) {
         const inputs = form.querySelectorAll('input, textarea, select');
         
