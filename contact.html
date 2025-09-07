@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-9bupD3KVZDSUjDdzGg4I4T246+P6A/0Z2Jq2xK/E6A2C4L2sJb2Al2Kz5D2Jh2G2b2sC4l2sJb2Al2Kz5D2Jh2G==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -35,16 +35,17 @@
                 <a href="products.html" class="nav-link">منتجاتنا</a>
                 <a href="about.html" class="nav-link">من نحن</a>
                 <a href="contact.html" class="nav-link active">اتصل بنا</a>
-                <a href="https://wa.me/201143343338" class="nav-link whatsapp-nav" target="_blank">
-                    <i class="whatsapp-icon">📱</i> واتساب
-                </a>
             </div>
 
-            <!-- Dark Mode Toggle -->
-            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon moon-icon"></i>
-                <i class="fas fa-sun sun-icon"></i>
-            </button>
+            <div class="nav-actions">
+                <a href="https://wa.me/201143343338" class="nav-action-btn whatsapp-btn" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <button id="dark-mode-toggle" class="nav-action-btn dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon moon-icon"></i>
+                    <i class="fas fa-sun sun-icon"></i>
+                </button>
+            </div>
             
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
@@ -75,7 +76,7 @@
             <div class="contact-grid">
                 <div class="contact-card whatsapp-card">
                     <div class="contact-icon">
-                        <span>📱</span>
+                        <span><i class="fab fa-whatsapp"></i></span>
                     </div>
                     <h3 class="contact-title">واتساب</h3>
                     <p class="contact-description">أسرع طريقة للتواصل والطلب</p>
@@ -90,7 +91,7 @@
 
                 <div class="contact-card phone-card">
                     <div class="contact-icon">
-                        <span> 📞</span>
+                        <span><i class="fas fa-phone"></i></span>
                     </div>
                     <h3 class="contact-title">اتصل بنا</h3>
                     <p class="contact-description">كلمنا مباشرة لطلب سريع</p>
@@ -105,7 +106,7 @@
 
                 <div class="contact-card email-card">
                     <div class="contact-icon">
-                        <span>✉️</span>
+                        <span><i class="fas fa-envelope"></i></span>
                     </div>
                     <h3 class="contact-title">بريد إلكتروني</h3>
                     <p class="contact-description">للاستفسارات والشكاوى</p>
@@ -120,7 +121,7 @@
 
                 <div class="contact-card location-card">
                     <div class="contact-icon">
-                        <span>📍</span>
+                        <span><i class="fas fa-location-dot"></i></span>
                     </div>
                     <h3 class="contact-title">العنوان</h3>
                     <p class="contact-description">تعال زورنا في محلنا</p>
@@ -197,7 +198,7 @@
                             </button>
                             
                             <button type="button" id="whatsappFormBtn" class="btn btn-whatsapp">
-                                <span>📱 أرسل عبر واتساب</span>
+                                <span><i class="fab fa-whatsapp"></i> أرسل عبر واتساب</span>
                                 <div class="btn-ripple"></div>
                             </button>
                         </div>
@@ -209,7 +210,7 @@
                         <h3>معلومات سريعة</h3>
                         
                         <div class="info-item">
-                            <div class="info-icon">⏰</div>
+                            <div class="info-icon"><i class="fas fa-clock"></i></div>
                             <div class="info-content">
                                 <h4>ساعات العمل</h4>
                                 <p>السبت - الخميس: 8:00 ص - 10:00 م</p>
@@ -218,7 +219,7 @@
                         </div>
 
                         <div class="info-item">
-                            <div class="info-icon">🚚</div>
+                            <div class="info-icon"><i class="fas fa-truck"></i></div>
                             <div class="info-content">
                                 <h4>مناطق التوصيل</h4>
                                 <p>القاهرة الكبرى - الجيزة - الإسكندرية</p>
@@ -227,7 +228,7 @@
                         </div>
 
                         <div class="info-item">
-                            <div class="info-icon">💳</div>
+                            <div class="info-icon"><i class="fas fa-credit-card"></i></div>
                             <div class="info-content">
                                 <h4>طرق الدفع</h4>
                                 <p>كاش عند التسليم</p>
@@ -237,7 +238,7 @@
                         </div>
 
                         <div class="info-item">
-                            <div class="info-icon">🎯</div>
+                            <div class="info-icon"><i class="fas fa-bullseye"></i></div>
                             <div class="info-content">
                                 <h4>الرد السريع</h4>
                                 <p>نرد على الواتساب في خلال 5 دقايق</p>
@@ -260,7 +261,7 @@
             
             <div class="map-container">
                 <div class="map-placeholder">
-                    <div class="map-icon">🗺️</div>
+                    <div class="map-icon"><i class="fas fa-map-marked-alt"></i></div>
                     <h3>موقعنا</h3>
                     <p>الكورنيش، الإسكندرية، مصر</p>
                     <p>أمام سوق السمك الرئيسي</p>
@@ -349,16 +350,16 @@
     <section class="emergency-contact">
         <div class="container">
             <div class="emergency-card">
-                <div class="emergency-icon">🚨</div>
+                <div class="emergency-icon"><i class="fas fa-exclamation-triangle"></i></div>
                 <h3>محتاج مساعدة فورية؟</h3>
                 <p>لو عندك استفسار عاجل أو مشكلة في الطلب، اتصل بنا فوراً</p>
                 <div class="emergency-buttons">
                     <a href="https://wa.me/01143343338?text=مساعدة عاجلة" 
                        class="emergency-btn whatsapp" target="_blank">
-                        📱 واتساب فوري
+                        <i class="fab fa-whatsapp"></i> واتساب فوري
                     </a>
                     <a href="tel:+201143343338" class="emergency-btn phone">
-                        📞 اتصال عاجل
+                        <i class="fas fa-phone"></i> اتصال عاجل
                     </a>
                 </div>
             </div>
@@ -366,9 +367,9 @@
     </section>
 
     <!-- ==========================================================================
-       MODERN FOOTER V2
+       MODERN FOOTER V3
        ========================================================================== -->
-    <footer class="footer-v2">
+    <footer class="footer-v3">
         <div class="footer-bg">
             <div class="footer-wave"></div>
         </div>
@@ -445,13 +446,13 @@
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/201143343338?text=أهلاً، أريد الاستفسار عن منتجاتكم" 
        class="whatsapp-float" target="_blank" aria-label="تواصل معنا عبر الواتساب">
-        <div class="whatsapp-icon-float">📱</div>
+        <div class="whatsapp-icon-float"><i class="fab fa-whatsapp"></i></div>
         <div class="whatsapp-pulse"></div>
     </a>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="العودة للأعلى">
-        <span>⬆️</span>
+        <span><i class="fas fa-arrow-up"></i></span>
     </button>
 
     <!-- Success Modal -->
