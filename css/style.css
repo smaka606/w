@@ -103,7 +103,7 @@ body {
     --navbar-bg: rgba(255, 255, 255, 0.95);
     --footer-wave-fill: #f8fafc;
 
-    transition: background-color var(--transition-base), color var(--transition-base);
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
 }
 
 body.dark-mode {
@@ -124,18 +124,19 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color);
-    transition: color var(--transition-base);
+    transition: color 1s ease-in-out;
 }
 
 .feature-card, .product-card, .testimonial-card, .vm-card, .value-card, .team-card, .contact-card, .form-content, .contact-info-card, .faq-item, .modal-content {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    transition: background-color var(--transition-base), border-color var(--transition-base);
+    transition: background-color 1s ease-in-out, border-color 1s ease-in-out;
 }
 
 .navbar {
     background: var(--navbar-bg);
     border-bottom: 1px solid var(--border-color);
+    transition: background-color 1s ease-in-out, border-color 1s ease-in-out;
 }
 
 .nav-link {
@@ -148,13 +149,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-wave path {
     fill: var(--footer-wave-fill);
-    transition: fill var(--transition-base);
+    transition: fill 1s ease-in-out;
 }
 
 input, textarea, select {
     background-color: var(--bg-color);
     color: var(--text-color);
     border-color: var(--border-color);
+    transition: background-color 1s ease-in-out, color 1s ease-in-out, border-color 1s ease-in-out;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -701,75 +703,8 @@ p {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* ==========================================================================
-   DARK MODE TOGGLE
-   ========================================================================== */
-.dark-mode-toggle {
-    background: var(--gray-200);
-    border: 1px solid var(--border-color);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all var(--transition-base);
-    position: relative;
-    overflow: hidden;
-    margin-left: var(--spacing-4);
-}
-
-.dark-mode-toggle:hover {
-    background: var(--gray-300);
-    transform: scale(1.1);
-}
-
-.dark-mode-toggle i {
-    font-size: var(--font-size-lg);
-    position: absolute;
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-    color: var(--heading-color);
-}
-
-.dark-mode-toggle .sun-icon {
-    transform: translateY(20px) scale(0.8);
-    opacity: 0;
-}
-
-.dark-mode-toggle .moon-icon {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-}
-
-/* Dark mode active styles */
-body.dark-mode .dark-mode-toggle .sun-icon {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-}
-
-body.dark-mode .dark-mode-toggle .moon-icon {
-    transform: translateY(-20px) scale(0.8);
-    opacity: 0;
-}
-
-body.dark-mode .dark-mode-toggle {
-    background: var(--gray-700);
-}
-
-body.dark-mode .dark-mode-toggle:hover {
-    background: var(--gray-600);
-}
-
-
 /* Mobile menu */
 @media (max-width: 767px) {
-    .dark-mode-toggle {
-        margin-left: var(--spacing-2);
-        width: 40px;
-        height: 40px;
-    }
-
     .nav-menu {
         position: absolute;
         top: 100%;
@@ -3024,61 +2959,19 @@ body.dark-mode .dark-mode-toggle:hover {
 }
 
 /* ==========================================================================
-   MODERN FOOTER V2
+   MODERN FOOTER V3
    ========================================================================== */
-.footer-v2 {
+.footer-v3 {
     position: relative;
     padding: var(--spacing-20) 0 var(--spacing-8) 0;
-    background: linear-gradient(135deg, #021027, #05263a);
-    color: var(--gray-200);
+    background: var(--bg-color);
+    color: var(--text-color);
     overflow: hidden;
 }
 
-.footer-v2::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:
-        radial-gradient(ellipse at top left, rgba(13, 115, 119, 0.2), transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(255, 210, 63, 0.1), transparent 50%);
-    z-index: 1;
-    opacity: 0.5;
-    animation: footer-glow 15s ease-in-out infinite;
-}
-
-@keyframes footer-glow {
-    0% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 0.7; }
-    100% { transform: scale(1); opacity: 0.5; }
-}
-
-.footer-v2 .container {
+.footer-v3 .container {
     position: relative;
     z-index: 3;
-}
-
-.footer-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-}
-
-.footer-wave {
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' style='fill:%23f8fafc;'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.05;
 }
 
 .footer-main {
@@ -3087,18 +2980,16 @@ body.dark-mode .dark-mode-toggle:hover {
     gap: var(--spacing-10);
     margin-bottom: var(--spacing-12);
     padding: var(--spacing-8);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-2xl);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    box-shadow: var(--shadow-lg);
 }
 
 .footer-column .footer-heading {
     font-size: var(--font-size-lg);
     font-weight: 600;
-    color: var(--white);
+    color: var(--heading-color);
     margin-bottom: var(--spacing-6);
     position: relative;
 }
@@ -3121,7 +3012,7 @@ body.dark-mode .dark-mode-toggle:hover {
 }
 
 .footer-list li a {
-    color: var(--gray-400);
+    color: var(--text-color);
     transition: all var(--transition-base);
     display: inline-block;
 }
@@ -3136,20 +3027,20 @@ body.dark-mode .dark-mode-toggle:hover {
 .brand-section .footer-logo {
     width: 60px;
     margin-bottom: var(--spacing-4);
-    filter: drop-shadow(0 4px 10px rgba(255, 255, 255, 0.1));
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
 }
 
 .brand-section .footer-tagline {
     font-size: var(--font-size-base);
     font-weight: 500;
-    color: var(--white);
+    color: var(--heading-color);
     margin-bottom: var(--spacing-4);
     line-height: 1.6;
 }
 
 .brand-section .footer-description {
     font-size: var(--font-size-sm);
-    color: var(--gray-400);
+    color: var(--text-color);
     line-height: 1.7;
 }
 
@@ -3174,7 +3065,7 @@ body.dark-mode .dark-mode-toggle:hover {
 
 .contact-info span,
 .contact-info a {
-    color: var(--gray-400);
+    color: var(--text-color);
     transition: color var(--transition-base);
 }
 
@@ -3185,7 +3076,7 @@ body.dark-mode .dark-mode-toggle:hover {
 /* Footer Bottom */
 .footer-bottom {
     padding-top: var(--spacing-8);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3204,9 +3095,9 @@ body.dark-mode .dark-mode-toggle:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--heading-color);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 50%;
     font-size: var(--font-size-lg);
     transition: all var(--transition-base);
@@ -3626,6 +3517,14 @@ body.dark-mode .dark-mode-toggle:hover {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+.hero-title, .section-title {
+    visibility: hidden;
+}
+
+.fade-in-up-visible {
+    animation: fade-in-up 1s ease-in-out forwards;
 }
 
 /* ==========================================================================

@@ -686,33 +686,33 @@ function createProductCard(product) {
     card.className = 'product-card';
     card.dataset.category = product.category;
 
-    const whatsappMessage = encodeURIComponent(`أهلاً، أريد الاستفسار عن منتج: ${product.name}`);
+    const whatsappMessage = encodeURIComponent(`أهلاً، أريد طلب منتج: ${product.name}`);
     const whatsappLink = `https://wa.me/201143343338?text=${whatsappMessage}`;
 
-    // Dynamic placeholder
-    const placeholderNum = (product.id - 1) % 4 + 1; // 4 placeholders
-    const imagePath = `images/about/product${placeholderNum}.jpg`;
+    // Use placeholder if product image is not available
+    const imagePath = (product.image && product.image.fallback) ? product.image.fallback : `images/placeholder.txt`;
 
     card.innerHTML = `
         <div class="product-image">
-            <img src="${imagePath}" alt="${product.name}" loading="lazy">
+            <img src="${imagePath}" alt="${product.name}" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.txt';">
             <div class="product-overlay">
                 <div class="product-actions">
                     <button class="product-action preview-btn">
-                        👁️ معاينة
+                        <i class="fas fa-eye"></i> معاينة
                     </button>
                     <a href="${whatsappLink}" class="product-action whatsapp" target="_blank">
-                        📱 اطلب الآن
+                        <i class="fab fa-whatsapp"></i> اطلب الآن
                     </a>
                 </div>
             </div>
         </div>
         <div class="product-info">
             <h3 class="product-title">${product.name}</h3>
-            <p class="product-description">منتج طازج وعالي الجودة</p>
+            <p class="product-description">${product.description || 'منتج طازج وعالي الجودة'}</p>
         </div>
     `;
 
+    // Attach event listener directly here to ensure it works everywhere
     const previewBtn = card.querySelector('.preview-btn');
     if (previewBtn) {
         previewBtn.addEventListener('click', (e) => {
@@ -1491,6 +1491,66 @@ class AccessibilityManager {
 }
 
 // ==========================================================================
+// TEXT ANIMATIONS
+// ==========================================================================
+
+class TextAnimator {
+    constructor() {
+        this.typingElements = document.querySelectorAll('.hero-title, .section-title');
+        this.fadeElements = document.querySelectorAll('p, .feature-card, .product-card, .testimonial-card, .vm-card, .value-card, .team-card, .contact-card, .form-content, .info-item, .faq-item');
+        this.init();
+    }
+
+    init() {
+        this.initTypingAnimations();
+        this.initFadeAnimations();
+    }
+
+    initTypingAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.type(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        this.typingElements.forEach(el => observer.observe(el));
+    }
+
+    type(element) {
+        const text = element.textContent.trim();
+        element.textContent = '';
+        element.style.visibility = 'visible';
+
+        let i = 0;
+        const typing = setInterval(() => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typing);
+            }
+        }, 50);
+    }
+
+    initFadeAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        this.fadeElements.forEach(el => observer.observe(el));
+    }
+}
+
+
+// ==========================================================================
 // DARK MODE MANAGER
 // ==========================================================================
 
@@ -1553,6 +1613,7 @@ class AlFahdApp {
             this.components.preloader = new PreloaderManager();
             this.components.navigation = new NavigationManager();
             this.components.darkMode = new DarkModeManager();
+            this.components.textAnimator = new TextAnimator();
             this.components.modal = new ModalManager();
             this.components.form = new FormManager();
             this.components.scrollToTop = new ScrollToTop();

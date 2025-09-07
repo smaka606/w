@@ -29,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-9bupD3KVZDSUjDdzGg4I4T246+P6A/0Z2Jq2xK/E6A2C4L2sJb2Al2Kz5D2Jh2G2b2sC4l2sJb2Al2Kz5D2Jh2G==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -86,16 +86,17 @@
                 <a href="products.html" class="nav-link">منتجاتنا</a>
                 <a href="about.html" class="nav-link">من نحن</a>
                 <a href="contact.html" class="nav-link">اتصل بنا</a>
-                <a href="https://wa.me/201143343338" class="nav-link whatsapp-nav" target="_blank">
-                    <i class="whatsapp-icon">📱</i> واتساب
-                </a>
             </div>
 
-            <!-- Dark Mode Toggle -->
-            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon moon-icon"></i>
-                <i class="fas fa-sun sun-icon"></i>
-            </button>
+            <div class="nav-actions">
+                <a href="https://wa.me/201143343338" class="nav-action-btn whatsapp-btn" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <button id="dark-mode-toggle" class="nav-action-btn dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon moon-icon"></i>
+                    <i class="fas fa-sun sun-icon"></i>
+                </button>
+            </div>
             
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
@@ -131,7 +132,7 @@
                     </a>
                     <a href="https://wa.me/201234567890?text=أهلاً، أود الاستفسار عن منتجاتكم" 
                        class="btn btn-whatsapp" target="_blank">
-                        <span>📱 اطلب الآن</span>
+                        <span><i class="fab fa-whatsapp"></i> اطلب الآن</span>
                         <div class="btn-ripple"></div>
                     </a>
                 </div>
@@ -168,7 +169,7 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <div class="icon-3d">🐟</div>
+                        <div class="icon-3d"><i class="fas fa-fish-fins"></i></div>
                     </div>
                     <h3 class="feature-title">طازج دايماً</h3>
                     <p class="feature-text">كل منتجاتنا طازجة من البحر لحد بيتك، بنضمن لك الجودة والطعم الأصلي</p>
@@ -176,7 +177,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <div class="icon-3d">🚚</div>
+                        <div class="icon-3d"><i class="fas fa-truck-fast"></i></div>
                     </div>
                     <h3 class="feature-title">توصيل سريع</h3>
                     <p class="feature-text">خدمة توصيل في نفس اليوم لكل أنحاء القاهرة والإسكندرية</p>
@@ -184,7 +185,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <div class="icon-3d">💎</div>
+                        <div class="icon-3d"><i class="fas fa-gem"></i></div>
                     </div>
                     <h3 class="feature-title">جودة عالية</h3>
                     <p class="feature-text">منتجاتنا مختارة بعناية من أفضل مصادر الصيد في البحر المتوسط</p>
@@ -192,7 +193,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <div class="icon-3d">💰</div>
+                        <div class="icon-3d"><i class="fas fa-tags"></i></div>
                     </div>
                     <h3 class="feature-title">أسعار منافسة</h3>
                     <p class="feature-text">أفضل الأسعار في السوق مع ضمان الجودة والخدمة المتميزة</p>
@@ -295,7 +296,7 @@
                 <div class="cta-buttons">
                     <a href="https://wa.me/201143343338?text=أهلاً، أريد أطلب مأكولات بحرية" 
                        class="btn btn-whatsapp-large" target="_blank">
-                        <span>📱 اطلب عالواتساب</span>
+                        <span><i class="fab fa-whatsapp"></i> اطلب عالواتساب</span>
                         <div class="btn-ripple"></div>
                     </a>
                     <a href="contact.html" class="btn btn-outline">
@@ -308,9 +309,9 @@
     </section>
 
     <!-- ==========================================================================
-       MODERN FOOTER V2
+       MODERN FOOTER V3
        ========================================================================== -->
-    <footer class="footer-v2">
+    <footer class="footer-v3">
         <div class="footer-bg">
             <div class="footer-wave"></div>
         </div>
@@ -387,14 +388,50 @@
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/201143343338?text=أهلاً، أريد الاستفسار عن منتجاتكم" 
        class="whatsapp-float" target="_blank" aria-label="تواصل معنا عبر الواتساب">
-        <div class="whatsapp-icon-float">📱</div>
+        <div class="whatsapp-icon-float"><i class="fab fa-whatsapp"></i></div>
         <div class="whatsapp-pulse"></div>
     </a>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="العودة للأعلى">
-        <span>⬆️</span>
+        <span><i class="fas fa-arrow-up"></i></span>
     </button>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">تفاصيل المنتج</h3>
+                <button class="modal-close" onclick="closeQuickView()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="Product Image" />
+                </div>
+                <div class="modal-info">
+                    <p id="modalDescription"></p>
+                    <div class="modal-price">
+                        <span id="modalPrice"></span>
+                    </div>
+                    <div class="modal-features">
+                        <h4>مميزات المنتج:</h4>
+                        <ul>
+                            <li>طازج 100%</li>
+                            <li>جودة عالية</li>
+                            <li>توصيل سريع</li>
+                            <li>أسعار تنافسية</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="modalWhatsappBtn" href="#" class="btn btn-whatsapp" target="_blank">
+                    <span><i class="fab fa-whatsapp"></i> اطلب الآن</span>
+                </a>
+                <button onclick="closeQuickView()" class="btn btn-outline">إغلاق</button>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
